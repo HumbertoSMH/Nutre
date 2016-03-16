@@ -1,0 +1,21 @@
+{
+  "name": "Nutrenv",
+  "version": "0.0.0",
+  "description": "Nutrenv",
+  "main": "server.js",
+  "author": {
+    "name": "Hcorral",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mocha": "^2.4.5",
+    "mongoose": "^4.4.7",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
