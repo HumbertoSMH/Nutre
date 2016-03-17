@@ -13,6 +13,7 @@ module.exports = function (app)
 
     app.get("/signup", user_controller.signUpRender); 
     
+<<<<<<< HEAD
     app.get("/Bien", user_controller.Bien);
     
     
@@ -29,4 +30,14 @@ module.exports = function (app)
     });
 
     
+=======
+    app.get("/Bien", user_controller.Bien); 
+    //Peticiones POST
+    app.post("/signup", user_controller.signUp);
+
+    app.post("/signin", passport.authenticate('local', { failureRedirect: '/' }),
+  function (req, res) {
+        res.redirect('/Bien');
+    }); 
+>>>>>>> origin/master
 }

@@ -5,6 +5,7 @@ require("../models/user.model.js");
 var modelUser = require("mongoose").model("User");
 var passport = require("passport");
 
+<<<<<<< HEAD
 
 var getErrorMessage = function (err) {
     
@@ -29,6 +30,8 @@ var getErrorMessage = function (err) {
     
     return message;
 }
+=======
+>>>>>>> origin/master
 
 //Render de paginas. 
 exports.signInRender = function (req, res, next) 
@@ -58,6 +61,7 @@ exports.signUpRender = function (req, res, next)
 //Controladores para peticiones POST. 
 exports.signUp = function (req, res, next) {
     
+<<<<<<< HEAD
     if (!req.user) {
         var newUser = new modelUser({
             firstName : req.body.firstName,
@@ -87,6 +91,18 @@ exports.signUp = function (req, res, next) {
         return res.redirect("/Nutre"); 
     }
 
+=======
+    newUser.save(function (err, user) {
+        if (err) {
+            console.log(err);
+            res.send("No se ha completado con exito.");
+        }
+        else {
+            console.log(user);
+            res.send("Guardado con exito");
+        }
+    });
+>>>>>>> origin/master
 };
 
 
@@ -98,9 +114,14 @@ exports.signOut = function (req, res)
 
 exports.Bien = function (req, res) 
 {
+<<<<<<< HEAD
     console.log(req)
     if (!req.user)
         res.send("No tiene acceso");
     else
         res.render("nutre", { user: req.user.firstName });
+=======
+    console.log(req);
+    res.render("nutre", { user: req.user.firstName }); 
+>>>>>>> origin/master
 }

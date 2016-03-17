@@ -5,8 +5,12 @@ var express = require("express"),
     morgan = require("morgan"), 
     bodyParser = require("body-parser"),
     passport = require("passport"),
+<<<<<<< HEAD
     express_session = require("express-session"),
     flash = require("connect-flash");
+=======
+    express_session = require("express-session");
+>>>>>>> origin/master
 
 module.exports = function() {
     
@@ -22,9 +26,20 @@ module.exports = function() {
     app.use(bodyParser.json());
     
     //Passport 
+<<<<<<< HEAD
     app.use(require('express-session')({ secret: 'nutreenvironment', resave: false, saveUninitialized: false }));
     app.use(flash()); 
     app.use(passport.initialize());
+=======
+    //app.use(express_session.session({
+    //    secret: "NutreEnviron", 
+    //    resave: false, 
+    //    saveUninitialized: false
+    //}));
+    app.use(require('express-session')({ secret: 'nutreenvironment', resave: false, saveUninitialized: false }));
+    app.use(passport.initialize());
+    
+>>>>>>> origin/master
     app.use(passport.session());
 
     //Motor de vistas EJS
