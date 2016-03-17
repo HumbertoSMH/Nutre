@@ -6,6 +6,9 @@
     <title></title>
 </head>
 <body>
+  <% for(var i in messages) { %>
+    <div class="flash"><%= messages[i] %></div>
+  <% } %>
     <form action="/signup" method="POST">
         <input type="text" name="firstName" placeholder="Nombre">
         <input type="text" name="lastName" placeholder="Apellido">

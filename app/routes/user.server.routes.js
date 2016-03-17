@@ -2,7 +2,7 @@
 module.exports = function (app) 
 {
     user_controller = require("../controllers/user.server.controller.js");
-
+    var passport = require("passport");
     //Peticiones GET 
     app.get("/", function (req, res, next) { 
         res.redirect("/signin");
@@ -13,7 +13,20 @@ module.exports = function (app)
 
     app.get("/signup", user_controller.signUpRender); 
     
+    app.get("/Bien", user_controller.Bien);
+    
     
     //Peticiones POST
-    app.post("/signup", user_controller.signUp); 
+    app.post("/signup", user_controller.signUp);
+
+    app.post("/signin", passport.authenticate('local', 
+        {
+        failureRedirect: '/', 
+        failureFlash    : true
+        }),
+    function (req, res) {
+        res.redirect('/Bien');
+    });
+
+    
 }

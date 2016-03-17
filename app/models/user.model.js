@@ -30,7 +30,7 @@ var userModel = new Schema({
 
 userModel.pre("save", function (next) {
     if (this.password) {
-        this.password = this.encriptar(this.firstName, this.password); 
+        this.password = this.encriptar(this.email, this.password); 
     }
 
     next();

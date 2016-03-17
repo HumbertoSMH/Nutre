@@ -1,9 +1,12 @@
 //Archivo de configuración para el servidor 
 //Librerias Requeridas para el funcionamiento de la aplicación 
 
-var express    = require("express"),
-    morgan     = require("morgan"), 
-    bodyParser = require("body-parser");
+var express = require("express"),
+    morgan = require("morgan"), 
+    bodyParser = require("body-parser"),
+    passport = require("passport"),
+    express_session = require("express-session"),
+    flash = require("connect-flash");
 
 module.exports = function() {
     
@@ -18,6 +21,12 @@ module.exports = function() {
     ));
     app.use(bodyParser.json());
     
+    //Passport 
+    app.use(require('express-session')({ secret: 'nutreenvironment', resave: false, saveUninitialized: false }));
+    app.use(flash()); 
+    app.use(passport.initialize());
+    app.use(passport.session());
+
     //Motor de vistas EJS
     app.set("views", "./app/views");
     app.set("view engine", "ejs");
