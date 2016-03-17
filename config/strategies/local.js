@@ -19,10 +19,6 @@ module.exports = function ()
            function (username, password, done) {
         User.findOne({ email : username }, function (err, user) {
             if (err) {
-<<<<<<< HEAD
-=======
-                console.log(err);
->>>>>>> origin/master
                 return done(err);
             }
 
@@ -30,17 +26,9 @@ module.exports = function ()
                 return done(null, false, { message : "No existe el usuario" });
             }
 
-<<<<<<< HEAD
             if (user.password !== user.encriptar(username, password)) {
                 return done(null, false, { message : "Password incorrecto" });
             }
-=======
-            if (password === user.encriptar(username, password)) { 
-                console.log("No se encontro conincidencia");
-                return done(null, false, { message : "Password incorrecto" });
-            }
-
->>>>>>> origin/master
             return done(null, user);
         });
     }));
