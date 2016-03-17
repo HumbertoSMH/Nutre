@@ -2,8 +2,9 @@
 //y las inserciones a base de datos. 
 
 require("../models/user.model.js"); 
+var modelUser = require("mongoose").model("User");
+var passport = require("passport");
 
-var modelUser = require("mongoose").model("User"); 
 
 //Render de paginas. 
 exports.signInRender = function (req, res, next) 
@@ -37,6 +38,17 @@ exports.signUp = function (req, res, next) {
             res.send("Guardado con exito");
         }
     });
-    
-    
-}; 
+};
+
+
+exports.signOut = function (req, res) 
+{
+    req.logout();
+    res.redirect("/");
+}
+
+exports.Bien = function (req, res) 
+{
+    console.log(req);
+    res.render("nutre", { user: req.user.firstName }); 
+}
