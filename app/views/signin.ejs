@@ -6,27 +6,43 @@
     <title>Nutre - Login</title>
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/materialize.css">
-    <link rel="stylesheet" href="/css/animate.css">
+	<link rel="stylesheet" href="/css/animate.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body class="animated fadeIn">
     <div class="display-table">
         <div class="display-table-row">
             <div class="display-table-cell login-col-l">
-                
+                                <div class="center-align valing-wrapper">
+                    <h2 class="valign white-text" style="letter-spacing: 0.5em;">NutrE</h5>
+                    <hr>
+                    <span class="green-text text-darken-2">Nutrition Environment</span>
+                </div>
+                <div style="position: absolute; bottom: 0; left: 30%;" class="center-align white-text">
+                  
+                    <span> <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0; opacity: 0.5;" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a> </span>
+                </div>
             </div>
             <div class="display-table-cell login-col-r">
-                <form action="/signin" method="POST">
-                    <input type="text" name="email" placeholder="Correo Electronico" required>
-                    <input type="text" name="password" placeholder="Contraseña">
-                    <button type="submit" class="btn btn-green wave-effect">Entrar</button>
-                    <span class="right"><a href="/signup">Registrarme</a></span>
-                </form>
+                <div class="login-form">
+                        <form action="/signin" method="POST">
+                        <input type="text" name="email" placeholder="Correo Electronico" required>
+                        <input type="text" name="password" placeholder="Contraseña">
+                        <button type="submit" class="btn btn-green waves-effect waves-light">Entrar</button>
+                        <span class="right"><a href="/signup">Registrarme</a></span>
+                        <br>
+                          <div class="center-align">
+                           <% for(var i in messages) { %>
+                                 <br>
+                                 <div class="chip"><%= messages[i] %></div>
+                           <% } %>                             
+                          </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-  <% for(var i in messages) { %>
-    <div class="flash"><%= messages[i] %></div>
-  <% } %>
+
 
 </body>
 </html>

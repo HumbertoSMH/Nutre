@@ -15,6 +15,7 @@ module.exports = function (app)
     
     app.get("/Bien", user_controller.Bien);
     
+    app.get("/Nutre", user_controller.Nutre);
     
     //Peticiones POST
     app.post("/signup", user_controller.signUp);
@@ -25,7 +26,7 @@ module.exports = function (app)
         failureFlash    : true
         }),
     function (req, res) {
-        res.redirect('/Bien');
+        res.redirect('/Nutre');
     });
 
     

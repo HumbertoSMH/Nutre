@@ -2377,7 +2377,6 @@ figure {
 hr {
   box-sizing: content-box;
   height: 0;
-  width: 80%;
 }
 
 /**

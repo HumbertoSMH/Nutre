@@ -104,3 +104,11 @@ exports.Bien = function (req, res)
     else
         res.render("nutre", { user: req.user.firstName });
 }
+
+exports.Nutre = function(req, res, next)
+{
+    if (!req.user)
+        res.redirect("/")
+    else
+        res.render("nutre", {})
+}

@@ -3,10 +3,124 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Nutre</title>
+    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/materialize.css">
+	<link rel="stylesheet" href="/css/animate.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
-	<h1>Login Exitoso</h1> <h2>Bienvenido: <%= user%></h2>
-	<a href="/signout">Salir</a>
+    <div class="display-table">
+        <div class="display-table-row row">
+            <div class="display-table-cell nutre-side-bar" id="side-bar">
+                <div class="top-bar z-depth-1">
+                    
+                   
+                </div>
+                <div class="profile-container">
+                    
+                </div>
+            </div>
+            <div class="display-table-cell nutre-main" id="main-content">
+                <div class="top-bar  z-depth-1">
+                    <span class=" fa fa-2x fa-bars" id="toggle-bars"></span>
+                    <span class="fa fa-2x fa-comments" id="toggle-comments"></span>
+                    <span data-activates="slide-out" class="button-collapse"><i class="fa fa-2x fa-users"></i></span>
+                </div>
+                <div class="row">
+                    <div class="col m12 l12 s12">
+                        <div class="row">
+                            <div class="col m4">
+                                <div class="card">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                            <div class="col m4">
+                                <div class="card">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                            <div class="col m4">
+                                <div class="card">
+                                    <div class="card-content"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="display-table-cell nutre-side-bar" style="background: red; display:none;" id="side-comments">
+                flñkfdlkgñldfk
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/materialize.js"></script>
+    
+
+  <div id="slide-out" class="side-nav">
+      <div class="card">
+          <div class="card-content">
+                  <h3>Hola</h3>
+    
+    <form action="">
+        <input type="text" placeholder="Hola">
+        <input type="text" placeholder="Hola">
+        <input type="text" placeholder="Hola">
+        <input type="text" placeholder="Hola">
+        <input type="text" placeholder="Hola">
+    </form>
+          </div>
+      </div>
+
+  </div>
+  
+
+    <script>
+        $(document).on("ready", function(){
+            
+             $(".button-collapse").sideNav({
+                    menuWidth: 500, // Default is 240
+                    edge: 'right', // Choose the horizontal origin
+                    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                });
+            
+            $("#toggle-bars").on("click", function(){
+                console.log($("#side-bar").css("width"));
+                if($("#side-bar").hasClass("nutre-side-bar"))
+                {
+                    $("#side-bar").removeClass("nutre-side-bar");
+                    $("#side-bar").addClass("nutre-side-bar-sm");
+                    $("#main-content").css("width", "94%");
+                }
+                    
+                else
+                {
+                    $("#side-bar").removeClass("nutre-side-bar-sm");
+                    $("#side-bar").addClass("nutre-side-bar");
+                    $("#main-content").css("width", "88%");
+                }
+                     
+            }); 
+               
+            $("#toggle-comments").on("click",function(){
+                console.log($("#side-comments").css("display") );
+                if($("#side-comments").css("display") == "none")
+                {
+                    $("#side-comments").fadeIn();
+                    $("#main-content").css("width", 88-12 + "%");
+                }
+                    
+                else
+                {
+                    $("#side-comments").fadeOut();
+                    $("#main-content").css("width", 88 + "%");
+                }
+                    
+                     //$("#side-comments").css("display", "none");
+            })
+        });
+        
+    </script>
 </body>
 </html>
