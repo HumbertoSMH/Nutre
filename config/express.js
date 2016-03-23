@@ -38,7 +38,7 @@ module.exports = function() {
     //Rutas Usuarios, Clientes, Principal 
 
     require("../app/routes/user.server.routes.js")(app); 
-    
+    require("../app/routes/patient.server.routes.js")(app);
     app.use(function (req, res, next) {
         res.status(404).send('Sorry cant find that!');
     });

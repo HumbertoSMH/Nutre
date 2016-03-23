@@ -1,0 +1,22 @@
+<div class="col m12 l12 s12" >
+    <div class="row">
+        <div class="col m6 s12 l3 animated fadeIn" ng-repeat="user in Usuarios"  ng-model="Usuarios">
+            <div class="card-p z-depth-1">
+                <canvas class="header-bg teal  darken-3" width="250" height="70" id="header-blur">
+                    <span class="fa fa-bars rigth"></span>
+                </canvas>
+                <div class="avatar">
+                    <img ng-src="{{ user.imageUrl }}" alt="" />
+                </div>
+                <div class="content">
+                    <h5> {{ user.firstName + ' ' + user.lastName}} </h5>
+                    <p>  {{ user.reasonConsultation }} </p>
+                    <p>
+                        <button type="button" class="btn white-text"><i class="fa fa-paper-plane"></i> Contact</button>
+                        <button type="button" class="btn white-text"><i class="fa fa-paper-plane"></i> Contact</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

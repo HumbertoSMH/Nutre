@@ -77,17 +77,23 @@
         }
 
 .nutre-side-bar {
-    width: 12%;
+    width: 15%;
     float: left;
     height: 100% ;
     border-right : solid 0.5px rgba(0,0,0,0.2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .nutre-main
 {
-    width: 88%;
+    width: 85%;
     float: left;
     height: 100%;
+            -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .top-bar
@@ -96,25 +102,63 @@
     width: 100%;
     background-color: #53bf6b;
 }
+.top-bar .optios-left
+{
+    float: left;
+}
+.top-bar > span 
+{
+    color:  white;
+}
 
+.top-bar > ul.menus > li {
+    cursor: pointer; 
+    color:#009688 !important;
+    margin-right: 10px; 
+}
+
+.top-bar > ul.menus > li > span
+{
+    cursor: pointer;
+}
 .profile-container {
-    height: 120px; 
     width: 100%;
-    border: 1px solid #000;
+    background: url(http://img05.deviantart.net/68e7/i/2015/085/6/2/material_design__teal__by_sgrint-d8n7ifd.png);
+    background-size: cover; 
+            -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
     .profile-container > .profile-img {
-        width: 50%;
+        width: 100%;
+        padding-top: 10px;
     }
-    .profile-container > .profile-img > img {
+   .nutre-side-bar .profile-container > .profile-img > img {
         border-radius: 50%; 
-        border: 1px solid #000 !important;
+        border: 5px solid rgba(237, 237, 237, 0.6) !important;
+        height: 100px;
+        width: 100px;
+                -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
     }
     .profile-container > .profile-info{
-        width: 50%;
-        float: right;
+        padding: 5px;
     }
-
+    
+    .profile-container > .profile-info > span.fa 
+    {
+        margin-right: 5px;
+        cursor:pointer;
+    }
+.nutre-side-bar-sm > .profile-container > .profile-img > img {
+        border-radius: 50%; 
+        border: 5px solid rgba(237, 237, 237, 0.6) !important;
+        max-width: 60px;
+        max-height: 60px;
+    }
 .profile-info {
+    height: 30px;
     
 }
 
@@ -128,17 +172,20 @@ header {
 
 .nutre-side-bar-sm
 {
-    width: 6%;
+    width: 7%;
     float: left;
     height: 100% ;
     border-right : solid 0.5px rgba(0,0,0,0.2);
+        -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 #toggle-bars {
-    margin-left: 5px; 
-    padding: 15px;
-    color: white;
+    margin-left: 15px; 
+    color: #009688 !important;
     font-weight: 100;
+    cursor: pointer;
 }
 
 input.form-control
@@ -146,132 +193,119 @@ input.form-control
     margin-top: 15px;
 }
 
-.card-panel {
-  transition: box-shadow .25s;
-  padding: 20px;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: #fff;
+.top-bar > span.brand
+{   
+    margin: 15px;
 }
 
-.card {
-  position: relative;
-  margin: 0.5rem 0 1rem 0;
-  background-color: #fff;
-  transition: box-shadow .25s;
-  border-radius: 2px;
+
+
+/*Dropdown Menus */ 
+/* Dropdown Button */
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-.card .card-title {
-  font-size: 24px;
-  font-weight: 300;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.card .card-title.activator {
-  cursor: pointer;
+/* Dropdown Content (Hidden by Default) */
+.dropmenu-content {
+    display: none;
+    border: 1px solid #009688;
+    z-index: 99999;
+    position: absolute;
+    color: white !important; 
+    background-color: #009688;/*#f9f9f9*/;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-.card.small, .card.medium, .card.large {
-  position: relative;
+/* Links inside the dropdown */
+.dropmenu-content li {
+    color: white !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0 !important;
+    border: none !important;
 }
 
-.card.small .card-image, .card.medium .card-image, .card.large .card-image {
-  max-height: 60%;
-  overflow: hidden;
+.dropmenu-content li a 
+{
+    color: white !important;
 }
 
-.card.small .card-content, .card.medium .card-content, .card.large .card-content {
-  max-height: 40%;
-  overflow: hidden;
+/* Change color of dropdown links on hover */
+.dropmenu-content li:hover {background-color: #00695C;}
+
+/* Show the dropdown menu on hover */
+.dropbtn:hover .dropdown-content {
+    display: block;
 }
 
-.card.small .card-action, .card.medium .card-action, .card.large .card-action {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  background-color: inherit;
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
 
-.card.small {
-  height: 300px;
-}
 
-.card.medium {
-  height: 400px;
-}
+/* Cards Personalizadas */
 
-.card.large {
-  height: 500px;
-}
-
-.card .card-image {
-  position: relative;
-}
-
-.card .card-image img {
-  display: block;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-.card .card-image .card-title {
-  color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-}
-
-.card .card-content {
-  padding: 20px;
-  border-radius: 0 0 2px 2px;
-}
-
-.card .card-content p {
-  margin: 0;
-  color: inherit;
-}
-
-.card .card-content .card-title {
-  line-height: 48px;
-}
-
-.card .card-action {
-  border-top: 1px solid rgba(160, 160, 160, 0.2);
-  padding: 20px;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
-  margin-right: 20px;
-  transition: color .3s ease;
-  text-transform: uppercase;
-}
-
-.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
-  color: #ffd8a6;
-}
-
-.card .card-reveal {
-  padding: 20px;
-  position: absolute;
-  background-color: #fff;
-  width: 100%;
-  overflow-y: auto;
-  top: 100%;
-  height: 100%;
-  z-index: 1;
+    .src-image {
   display: none;
 }
+h1{margin-bottom:35px;}
+.card-p {
+  margin-top : 1em;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  border-radius: 0px;
+  text-align: center;
+  padding: 0;
+  background-color: white;
+}
+.card-p .content{ margin-top:15px; padding: 5px;}
+.content p{ color: black; width: 100%;}
+.content h5{ color: black;}
+.card-p .header-bg {
+  /* This stretches the canvas across the entire hero unit */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px #009688  solid;
+  /* This positions the canvas under the text */
+  z-index: 1;
+}
+.card-p .avatar {
+  position: relative;
+  margin-top: 15px;
+  z-index: 100;
+}
 
-.card .card-reveal .card-title {
-  cursor: pointer;
-  display: block;
+.card-p .avatar img {
+  width: 100px;
+  height: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  
+    border: 5px solid rgba(237, 237, 237, 0.6);
+}
+
+.collapsible-body > ul > li 
+{
+    margin-left: 30px; 
+    padding: 1em; 
+    margin-bottom: 5px;
+    border-left: 1px dotted black;
 }

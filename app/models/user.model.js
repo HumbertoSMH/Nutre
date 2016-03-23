@@ -22,8 +22,8 @@ var userModel = new Schema({
     email       : { type : String, require : "Debe proporcionar el campo Email. ", unique: true, dropDups: true  }, 
     dateCreate  : { type : Date, require : "Debe proporcionar el campo.", default: Date() }, 
     userType    : { type : String, enum : ["Basic", "Standar", "Premium"] }, 
-    password    : { type : String, require: "Es necesario ingresar el Password", minlength: 5 }
-
+    password    : { type : String, require: "Es necesario ingresar el Password", minlength: 5 },
+    photo       : { type : String}
 });
 
 

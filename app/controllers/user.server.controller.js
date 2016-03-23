@@ -112,3 +112,12 @@ exports.Nutre = function(req, res, next)
     else
         res.render("nutre", {})
 }
+
+exports.BuscarTodos = function(req, res, next){
+    modelUser.find({}, function (err, docs) {
+        if(err)
+            return res.send(err);
+        else
+            return res.send(docs); 
+    });
+}

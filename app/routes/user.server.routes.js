@@ -17,6 +17,8 @@ module.exports = function (app)
     
     app.get("/Nutre", user_controller.Nutre);
     
+    app.get("/todos", user_controller.BuscarTodos);
+    
     //Peticiones POST
     app.post("/signup", user_controller.signUp);
 

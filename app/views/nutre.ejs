@@ -1,126 +1,133 @@
 ﻿<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="NutreApp">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Nutre</title>
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/materialize.css">
 	<link rel="stylesheet" href="/css/animate.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <style>
+
+</style>
+
 </head>
 <body>
     <div class="display-table">
-        <div class="display-table-row row">
+        <div class="display-table-row ">
+            
+            <!-- Side Bar left -->
             <div class="display-table-cell nutre-side-bar" id="side-bar">
-                <div class="top-bar z-depth-1">
-                    
-                   
+                <div class="top-bar z-depth-1 teal">   
+                   <span class="brand">Nutre</span>
                 </div>
                 <div class="profile-container">
-                    
-                </div>
-            </div>
-            <div class="display-table-cell nutre-main" id="main-content">
-                <div class="top-bar  z-depth-1">
-                    <span class=" fa fa-2x fa-bars" id="toggle-bars"></span>
-                    <span class="fa fa-2x fa-comments" id="toggle-comments"></span>
-                    <span data-activates="slide-out" class="button-collapse"><i class="fa fa-2x fa-users"></i></span>
-                </div>
-                <div class="row">
-                    <div class="col m12 l12 s12">
-                        <div class="row">
-                            <div class="col m4">
-                                <div class="card">
-                                    <div class="card-content"></div>
-                                </div>
-                            </div>
-                            <div class="col m4">
-                                <div class="card">
-                                    <div class="card-content"></div>
-                                </div>
-                            </div>
-                            <div class="col m4">
-                                <div class="card">
-                                    <div class="card-content"></div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="profile-img center-align">
+                        <img src="https://scontent-dfw1-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/10945544_10200360907380924_6809423226260547189_n.jpg?_nc_eui=ARjNKEdVGrM_mh8Gt_37c70neNO58MVwaVl8Qk33sUWINj2v-3pqAroQ1F4Y&oh=fefdf9bf1aed4df888fbc72eae7a485e&oe=57964A9E" alt="" >
+                    </div>
+                    <div class="profile-info center-align teal white-text">
+                        <i class="fa fa-cog"></i>
+                        <i class="fa fa-pencil-square-o"></i>
+                        <i class="fa fa-sign-out"></i>
                     </div>
                 </div>
+                <ul class="collapsible" id="Menus">
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-home"></i><span><a href="#/">Inicio</a></span></div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user"></i><span>Pacientes</span></div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a ng-ref="nutre/patient">Nuevo Paciente</a></li>
+                                <li><a href="#/patients">Mostrar todos</a></li>
+                                <li><a href="">Seguimiento</a></li>
+                                <li><a href="">Modificar Paciente</a></li>
+                                <li><a href="">Eliminar Paciente</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-home"></i><span>asd</span></div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>siete</li>
+                                <li>ocho</li>
+                                <li>nueve</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i></i><span>asd</span></div>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>asd</li>
+                                <li>asd</li>
+                                <li>asd</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="display-table-cell nutre-side-bar" style="background: red; display:none;" id="side-comments">
-                flñkfdlkgñldfk
+            
+            
+            <!-- Main content-->
+            <div class="display-table-cell nutre-main" id="main-content">
+                <div class="top-bar  z-depth-1 grey lighten-5">
+                    <ul class="left">
+                        <li class=""><span class=" fa fa-2x fa-bars" id="toggle-bars"></span></li>
+                    </ul>
+                    <ul class="pull-right menus">
+                        <li class="pull-right"><span class="fa  fa-comments" id="toggle-comments"></span></li>
+                        <li class="pull-right"><span data-activates="slide-out" class="button-collapse"><i class="fa fa-users"></i></span></li>
+                    </ul>
+                    
+                    
+                    
+                </div>
+                <div class="row" ng-view class="animated fadeIn">
+                    
+                </div>
             </div>
         </div>
     </div>
-    <script src="/js/jquery.js"></script>
-    <script src="/js/materialize.js"></script>
     
-
-  <div id="slide-out" class="side-nav">
-      <div class="card">
-          <div class="card-content">
-                  <h3>Hola</h3>
     
-    <form action="">
-        <input type="text" placeholder="Hola">
-        <input type="text" placeholder="Hola">
-        <input type="text" placeholder="Hola">
-        <input type="text" placeholder="Hola">
-        <input type="text" placeholder="Hola">
-    </form>
+    <!-- Side bar rigth -->
+  <div id="slide-out" class="side-nav teal lighten-1">
+      <div class="row">
+          <div class="col s10 offset-s1">
+              <div class="card">
+                    <div class="card-content">
+                        <h5>FeedBack</h5>
+                        <p>Nutre se encuentra aun en estado de pruebas por lo cual importante tus opiniones.</p>
+                        <div class="input-field">
+                            <select name="" id="">
+                                <option value="" disable selected>Tipo de comentario</option>
+                                <option value="">Error</option>
+                                <option value="">Mejora</option>
+                                <option value="">Comentario</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="txaObservaciones" placeholder="Observaciones" lenth="500" class="materialize-textarea"></textarea>
+                            <
+                        </div>
+                    </div>
+                </div>
+            </div>            
           </div>
       </div>
 
-  </div>
-  
-
-    <script>
-        $(document).on("ready", function(){
-            
-             $(".button-collapse").sideNav({
-                    menuWidth: 500, // Default is 240
-                    edge: 'right', // Choose the horizontal origin
-                    closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                });
-            
-            $("#toggle-bars").on("click", function(){
-                console.log($("#side-bar").css("width"));
-                if($("#side-bar").hasClass("nutre-side-bar"))
-                {
-                    $("#side-bar").removeClass("nutre-side-bar");
-                    $("#side-bar").addClass("nutre-side-bar-sm");
-                    $("#main-content").css("width", "94%");
-                }
-                    
-                else
-                {
-                    $("#side-bar").removeClass("nutre-side-bar-sm");
-                    $("#side-bar").addClass("nutre-side-bar");
-                    $("#main-content").css("width", "88%");
-                }
-                     
-            }); 
-               
-            $("#toggle-comments").on("click",function(){
-                console.log($("#side-comments").css("display") );
-                if($("#side-comments").css("display") == "none")
-                {
-                    $("#side-comments").fadeIn();
-                    $("#main-content").css("width", 88-12 + "%");
-                }
-                    
-                else
-                {
-                    $("#side-comments").fadeOut();
-                    $("#main-content").css("width", 88 + "%");
-                }
-                    
-                     //$("#side-comments").css("display", "none");
-            })
-        });
-        
-    </script>
+    
+    <script src="/js/jquery.js"></script>
+    <script src="/js/materialize.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.2/angular-route.js"></script>
+    <script src="/js/site.js"></script>
+    <script src="/application.js"></script>
 </body>
 </html>
