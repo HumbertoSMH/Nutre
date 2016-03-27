@@ -19,15 +19,17 @@ exports.NewPatient = function (req, res, next)
     if (!req.user) {
         res.redirect("/");
     }
-    else { 
-        var patient = new modelPatient({
-            owner: req.user.id,
+    else {
+        console.log(req.body);
+        var patient = new modelPatient(req.body /*{
+
+           owner: req.user.id,
             firstName : req.body.firstName,
             lastName : req.body.lastName, 
             imageUrl : req.body.imageUrl, 
-            reasonConsultation : req.body.reasonConsultation 
-        });
-
+            reasonConsultation : req.body.reasonConsultation
+        }*/);
+        patient.owner = req.user.id;
         patient.save(function (err, patient) {
             if (err) {
                 console.log(err)
@@ -61,4 +63,26 @@ exports.FindPatients = function (req, res, next)
         });
     }
     
+}
+
+exports.FindPatientById = function (req,res, next) {
+    if(!req.user)
+        return res.redirect("/");
+    else
+    {
+        modelPatient.findById(req.params.id, function(err, doc){
+           if(err)
+                return res.send("Ha ocurrido un error");
+           else
+                return res.send(doc);
+        });
+    }
+};
+
+exports.UpdatePatient = function (req, res, next) {
+  //Body
+};
+
+exports.DeletePatient = function (req, res, next) {
+    //body
 }

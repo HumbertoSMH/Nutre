@@ -1,18 +1,23 @@
-//Archivo de configuración para el servidor 
-//Librerias Requeridas para el funcionamiento de la aplicación 
+//Archivo de configuraciï¿½n para el servidor 
+//Librerias Requeridas para el funcionamiento de la aplicaciï¿½n 
 
 var express = require("express"),
     morgan = require("morgan"), 
     bodyParser = require("body-parser"),
     passport = require("passport"),
-    express_session = require("express-session"),
+    path = require('path'),
     flash = require("connect-flash");
+
+var userRoutes = require("../app/routes/user.server.routes");
+var patientRoutes = require("../app/routes/patient.server.routes");
 
 module.exports = function() {
     
     var app = express();
-    
-    //Configuración del Loger 
+
+
+
+    //Configuraciï¿½n del Loger 
     app.use(morgan("dev"));
     
     //BodyParser 
@@ -35,10 +40,13 @@ module.exports = function() {
     app.use(express.static("./public"));
     
     
-    //Rutas Usuarios, Clientes, Principal 
+    //Rutas Usuarios, Clientes, Principal
 
+    app.use("/", userRoutes);
+    app.use("/patient", patientRoutes);
+/*
     require("../app/routes/user.server.routes.js")(app); 
-    require("../app/routes/patient.server.routes.js")(app);
+    require("../app/routes/patient.server.routes.js")(app);*/
     app.use(function (req, res, next) {
         res.status(404).send('Sorry cant find that!');
     });

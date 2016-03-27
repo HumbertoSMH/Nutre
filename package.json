@@ -15,6 +15,7 @@
     "express-session": "^1.13.0",
     "mocha": "^2.4.5",
     "mongoose": "^4.4.7",
+    "mongoose-schema-extend": "^0.2.2",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"

@@ -7,6 +7,7 @@
     <title>Nutre</title>
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="/css/materialize.css">
+    <link rel="stylesheet" href="/css/flexboxgrid.css">
 	<link rel="stylesheet" href="/css/animate.css" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
@@ -42,7 +43,7 @@
                         <div class="collapsible-header"><i class="fa fa-user"></i><span>Pacientes</span></div>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a ng-ref="nutre/patient">Nuevo Paciente</a></li>
+                                <li><a href="#/patient/new">Nuevo Paciente</a></li>
                                 <li><a href="#/patients">Mostrar todos</a></li>
                                 <li><a href="">Seguimiento</a></li>
                                 <li><a href="">Modificar Paciente</a></li>
@@ -91,6 +92,9 @@
                 <div class="row" ng-view class="animated fadeIn">
                     
                 </div>
+				<form action="/pre" method="post">
+				<button type="submit">Enviar</button>
+				</form>
             </div>
         </div>
     </div>
@@ -114,7 +118,7 @@
                         </div>
                         <div class="input-field">
                             <textarea id="txaObservaciones" placeholder="Observaciones" lenth="500" class="materialize-textarea"></textarea>
-                            <
+
                         </div>
                     </div>
                 </div>

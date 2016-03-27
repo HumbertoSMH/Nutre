@@ -4,6 +4,7 @@
 //la entrevista nutrimental mas no las citas 
 
 var mongoose = require("mongoose");
+var extend = require('mongoose-schema-extend');
 var Schema = mongoose.Schema;
 
 //mongoose.connect("mongodb://localhost/testNutre1");
@@ -95,7 +96,7 @@ var pacienteModel = new Schema({
     dateCreated : { type: Date, default: Date() }, 
     imageUrl    : { type: String , default : "http://placehold.it/150x150" },
     reasonConsultation : String,
-    personalHistoy : 
+    personalHistory :
     {
         sex         : { type: String, enum: ["Masculino", "Femenino"] }, 
         age         : { type: Number }, 
@@ -149,6 +150,7 @@ var pacienteModel = new Schema({
     vitalSigns     :  [modelVitalSigns]
 });
 
+
 var Patient = mongoose.model("Patient", pacienteModel);
 var Generic = mongoose.model("Generic", modelGeneric);
 var Sick = mongoose.model("Sick", modelSicks);
@@ -159,6 +161,7 @@ var Macronutrient = mongoose.model("Macronutrient", modelMacronutrients);
 var Quote = mongoose.model("Quote", modelQuotes);
 var MedicalTest = mongoose.model("Medicaltest", modelMedicaltest);
 var VitalSign = mongoose.model("VitalSign", modelVitalSigns);
+
 
 module.exports = Patient;
 module.exports = Generic;

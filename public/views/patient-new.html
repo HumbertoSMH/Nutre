@@ -1,0 +1,44 @@
+<form ng-submit="AgregarPaciente()">
+    <div>
+        <div class="col-md-12 ">
+            <div class="card">
+                <button type="submit">Enviar</button>
+                <div class="card-content">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2 middle-md teal darken-2" >
+                            <img ng-src="{{ datas.imageUrl }}" alt="Foto del Perfil" class="circle responsive-img" >
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                            <input type="text" ng-model="datas.firstName" placeholder="Nombre">
+                            <input type="text" ng-model="datas.lastName" placeholder="Apellido">
+                            <input type="text" ng-model="datas.imageUrl" placeholder="Foto" >
+                            <textarea cols="30" rows="10" ng-model="datas.reasonConsultation" class="materialize-textarea" placeholder="Motivos de consulta"></textarea>
+
+                        </div>
+                        <div class="col-md-5 col-sm-5">
+                            <div class="input-field">
+                                <select ng-model="datas.personalHistory.sex">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                </select>
+                            </div>
+                            <input type="number" ng-model="datas.personalHistory.age" placeholder="Edad">
+                            <input type="text" ng-model="datas.personalHistory.languaje" placeholder="Idioma">
+                            <input type="text" ng-model="datas.personalHistory.literacy" placeholder="Factores de Alfabetización">
+                            <input type="text" ng-model="datas.personalHistory.education" placeholder="Educación">
+                        </div>
+                    </div>
+                    <div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
